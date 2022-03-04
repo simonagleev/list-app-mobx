@@ -4,7 +4,7 @@ import { Avatar, Chip, makeStyles, Box, Typography, colors, useTheme } from '@ma
 
 import Paper from '@material-ui/core/Paper';
 import Stack from '@mui/material/Stack';
-import PointOfSaleIcon from '@mui/icons-material/PointOfSale';
+import Counter2 from '../Counter2';
 
 const useStyles = makeStyles({
     root: {
@@ -24,24 +24,33 @@ const useStyles = makeStyles({
 interface IValue {
     label: string;
     color: string;
+    num: number;
+    indexSpare: number;
+    icon: any;
 }
 
 interface ICardProps {
     idx?: number;
     obj?: Record<string, IValue>;
+    num?: number;
+    upperIndex: number;
 }
 
 export const Card2 = ({
     idx,
     obj = {},
+    upperIndex,
 }: ICardProps) => {
     const classes = useStyles();
     const theme = useTheme();
     const {
         label,
-        color
+        color,
+        num,
+        icon,
+        // indexSpare,
     } = obj[`value${idx}`];
-
+    
     // const obj1 = { test: 1}
     // obj1.test
     // obj1["test"]
@@ -61,7 +70,7 @@ export const Card2 = ({
                     alignItems="center"                   
                 >
                     <Avatar>
-                        <PointOfSaleIcon color='error'/>
+                        {icon}
                     </Avatar>
                 </Stack>
                 
@@ -97,7 +106,8 @@ export const Card2 = ({
                     justifyContent="center"
                     alignItems="center"
                 >
-                    <Typography variant='h4' color='secondary'>15</Typography>
+                    <Counter2 idx={upperIndex} num={num} />
+                    {/* <Typography variant='h4' color='secondary'>15</Typography> */}
                 </Stack>
                 
             </Stack>
