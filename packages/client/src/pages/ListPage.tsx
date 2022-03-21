@@ -1,27 +1,23 @@
-import { useRef } from 'react';
-
-import { inject, observer } from "mobx-react";
-import compose from "compose-function";
-
 import {
-  ListTyped,
-  FieldType,
-  TypedField,
-  SelectionMode,
-  IColumn,
-  IListApi,
-  IListAction,
   ActionType,
   ColumnType,
+  FieldType,
+  IColumn,
+  IListAction,
+  IListApi,
+  ListTyped,
+  SelectionMode,
+  TypedField,
 } from 'react-declarative';
+import { inject, observer } from "mobx-react";
 
-import Delete from '@material-ui/icons/Delete';
 import Add from '@material-ui/icons/Add';
-
+import Delete from '@material-ui/icons/Delete';
 import IPerson from '../model/IPerson';
-
 import PersonService from '../lib/PersonService';
 import RouterService from '../lib/base/RouterService';
+import compose from "compose-function";
+import { useRef } from 'react';
 
 const filters: TypedField[] = [
   {

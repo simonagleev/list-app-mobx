@@ -1,13 +1,9 @@
-import ReactDOM from 'react-dom';
-
-import { ModalProvider } from 'react-declarative';
-
-import { SnackbarProvider } from 'notistack';
-import { Provider } from 'mobx-react';
-
-import ioc from './lib/ioc';
-
 import App from './components/App';
+import { ModalProvider } from 'react-declarative';
+import { Provider } from 'mobx-react';
+import ReactDOM from 'react-dom';
+import { SnackbarProvider } from 'notistack';
+import ioc from './lib/ioc';
 
 const wrappedApp = (
   <SnackbarProvider
